@@ -63,7 +63,7 @@ public class Student {
         name = n;
         id = sid;
         email = em;
-        group = "INT22041";
+        group = "INT22042";
     }
 
     /**
