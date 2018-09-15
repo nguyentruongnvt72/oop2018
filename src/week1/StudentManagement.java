@@ -1,7 +1,5 @@
 package week1;
 
-import java.util.ArrayList;
-
 public class StudentManagement {
 
     // TODO: khai báo thuộc tính students là array chứa các đối tượng thuộc lớp Student (max. 100)
