@@ -46,7 +46,7 @@ public class Student {
      */
     Student() {
         // TODO:
-        name = "Student";
+        name = "Student1";
         id = "000";
         group = "INT22041";
         email = "uet@vnu.edu.vn";
