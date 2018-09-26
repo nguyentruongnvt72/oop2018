@@ -25,8 +25,8 @@ public class Fraction {
 
     public Fraction subtract(Fraction other) {
         // TODO: Phương thức trừ hai phân số (this và other), trả về đối tượng Fraction mới
-        int ucln = Task1.gcd(Math.abs(this.numerator * other.denominator - other.numerator * this.denominator), (this.denominator * other.denominator));
-        other.numerator=Math.abs((this.numerator * other.denominator - other.numerator * this.denominator)/ucln);
+        int ucln = Task1.gcd((this.numerator * other.denominator - other.numerator * this.denominator), (this.denominator * other.denominator));
+        other.numerator=((this.numerator * other.denominator - other.numerator * this.denominator)/ucln);
         other.denominator=(this.denominator * other.denominator)/ucln ;
         System.out.println(other.numerator + "/" + other.denominator);
         return other;
@@ -44,7 +44,7 @@ public class Fraction {
     public Fraction divide(Fraction other) {
         // TODO: Phương thức chia hai phân số (this và other), trả về đối tượng Fraction mới
 
-        int ucln = Task1.gcd((this.numerator *other.denominator), (this.denominator * other.denominator));
+        int ucln = Task1.gcd((this.numerator *other.denominator), (this.denominator * other.numerator));
         other.numerator=(this.numerator*other.denominator)/ucln;
         other.denominator=(this.denominator * other.numerator)/ucln ;
         System.out.println(other.numerator + "/" + other.denominator);
