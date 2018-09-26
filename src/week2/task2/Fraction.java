@@ -20,7 +20,7 @@ public class Fraction {
         other.numerator=(this.numerator * other.denominator + other.numerator * this.denominator)/ucln;
         other.denominator=(this.denominator * other.denominator)/ucln ;
         System.out.println(other.numerator + "/" + other.denominator);
-        return null;
+        return other;
     }
 
     public Fraction subtract(Fraction other) {
@@ -29,7 +29,7 @@ public class Fraction {
         other.numerator=Math.abs((this.numerator * other.denominator - other.numerator * this.denominator)/ucln);
         other.denominator=(this.denominator * other.denominator)/ucln ;
         System.out.println(other.numerator + "/" + other.denominator);
-        return null;
+        return other;
     }
 
     public Fraction multiply(Fraction other) {
@@ -38,7 +38,7 @@ public class Fraction {
         other.numerator=(this.numerator*other.numerator)/ucln;
         other.denominator=(this.denominator * other.denominator)/ucln ;
         System.out.println(other.numerator + "/" + other.denominator);
-        return null;
+        return other;
     }
 
     public Fraction divide(Fraction other) {
@@ -48,7 +48,7 @@ public class Fraction {
         other.numerator=(this.numerator*other.denominator)/ucln;
         other.denominator=(this.denominator * other.numerator)/ucln ;
         System.out.println(other.numerator + "/" + other.denominator);
-        return null;
+        return other;
     }
     public boolean equals(Object obj){
         Fraction Obj = (Fraction) obj;
