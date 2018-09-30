@@ -44,8 +44,8 @@ public class Fraction {
     public Fraction divide(Fraction other) {
         // TODO: Phương thức chia hai phân số (this và other), trả về đối tượng Fraction mới
 
-        int ucln = Task1.gcd((this.numerator *other.denominator), (this.denominator * other.numerator));
-        other.numerator=(this.numerator*other.denominator)/ucln;
+        int ucln = Task1.gcd((this.numerator * other.denominator), (this.denominator * other.numerator));
+        other.numerator=(this.numerator * other.denominator)/ucln;
         other.denominator=(this.denominator * other.numerator)/ucln ;
         System.out.println(other.numerator + "/" + other.denominator);
         return other;
@@ -64,6 +64,12 @@ public class Fraction {
         else
             System.out.println(this.numerator + "/" + this.denominator + " == " + Obj.numerator + "/" + Obj.denominator);
         return true;
+    }
+    public static void main(String[] abc){
+        Fraction text = new Fraction(3, 4);
+        Fraction text1 = new Fraction(1, 1);
+        text.divide(text1);
+
     }
 
 }
