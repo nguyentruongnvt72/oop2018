@@ -12,7 +12,7 @@ public class Week3Test {
         int a=5;
         int b=4;
         int c= Week3.max(a, b);
-        Assert.assertEquals(a, c);
+        assertEquals(a, c);
     }
     @Test
     public void test1Max(){
@@ -24,6 +24,14 @@ public class Week3Test {
     }
     @Test
     public void test2Max(){
+        int a=5;
+        int b=7;
+        int c = Week3.max(a, b);
+
+        assertEquals(c, b);
+    }
+    @Test
+    public void test3Max(){
         int a=5;
         int b=7;
         int c = Week3.max(a, b);
@@ -73,6 +81,28 @@ public class Week3Test {
         int min = Week3.minOfArray(mang);
         assertEquals(min, 0);
     }
+    @Test
+    public void test3Min0fArray(){
+        int[] mang = new int[100];
+        mang[0] = 3;
+        mang[1] = 1;
+        mang[2] = 1;
+        mang[3] = 0;
+
+        int min = Week3.minOfArray(mang);
+        assertEquals(min, 0);
+    }
+    @Test
+    public void test4Min0fArray(){
+        int[] mang = new int[100];
+        mang[0] = 3;
+        mang[1] = 1;
+        mang[2] = 1;
+        mang[3] = 0;
+
+        int min = Week3.minOfArray(mang);
+        assertEquals(min, 0);
+    }
     // TODO: Viết 5 testcase cho phương thức calculateBMI()
     @Test
     public void testCalculateBMI(){
@@ -97,6 +127,13 @@ public class Week3Test {
     }
     @Test
     public void test3CalculateBMI(){
+        double weight = 70;
+        double height = 1.6;
+        String bmi = Week3.calculateBMI(weight, height);
+        assertEquals(bmi, "Beo phi");
+    }
+    @Test
+    public void test4CalculateBMI(){
         double weight = 70;
         double height = 1.6;
         String bmi = Week3.calculateBMI(weight, height);
