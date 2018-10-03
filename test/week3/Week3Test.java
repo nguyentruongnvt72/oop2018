@@ -11,8 +11,8 @@ public class Week3Test {
     public void testMax(){
         int a=5;
         int b=4;
-
-        Assert.assertEquals(a, Week3.max(a, b));
+        int c= Week3.max(a, b);
+        Assert.assertEquals(a, c);
     }
     @Test
     public void test1Max(){
