@@ -1,5 +1,6 @@
 package week3;
 
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -10,16 +11,15 @@ public class Week3Test {
     public void testMax(){
         int a=5;
         int b=4;
-        int c = Week3.max(a, b);
-        //System.out.println(c);
-        assertEquals(c, a);
+
+        Assert.assertEquals(a, Week3.max(a, b));
     }
     @Test
     public void test1Max(){
         int a=6;
         int b=4;
         int c = Week3.max(a, b);
-        //System.out.println(c);
+
         assertEquals(c, a);
     }
     @Test
@@ -27,7 +27,7 @@ public class Week3Test {
         int a=5;
         int b=7;
         int c = Week3.max(a, b);
-        //System.out.println(c);
+
         assertEquals(c, b);
     }
     @Test
@@ -35,7 +35,7 @@ public class Week3Test {
         int a=9;
         int b=4;
         int c = Week3.max(a, b);
-        //System.out.println(c);
+
         assertEquals(c, a);
     }
 
