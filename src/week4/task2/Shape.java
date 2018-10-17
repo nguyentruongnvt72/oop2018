@@ -1,16 +1,21 @@
 package week4.task2;
 
 public class Shape {
-    private String color = "red";
-    private boolean filled = true;
-    Shape(){
-         color = "red";
+    public String color = "red";
+    public boolean filled = true;
+    Shape(String color, String fille){
+         this.color = "red";
          filled = true;
     }
-    Shape(String Color, boolean Filled){
+    public Shape(String Color, boolean Filled){
         color = Color;
         filled = Filled;
     }
+
+    public Shape() {
+    }
+
+
     public String getColor(){
         return color;
     }

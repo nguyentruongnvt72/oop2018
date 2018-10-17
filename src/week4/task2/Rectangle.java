@@ -5,12 +5,15 @@ public class Rectangle extends Shape{
     private double length = 1.0;
     Rectangle(){
 
+
     }
     Rectangle(double Width, double Length){
+
         width = Width;
         length = Length;
     }
-    Rectangle(double Width, double Length, String Color, boolean Filled){
+    Rectangle(double Width, double Length, String Color, boolean Filled){ ;
+
         width = Width;
         length = Length;
         setColor(Color);
