@@ -1,45 +1,75 @@
 package week10;
-import java.io.FileInputStream;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Task1 {
-    public List<String> getAllFunctions(String path){
-        List<String> myList = new ArrayList<>();
-        try{
-            FileInputStream fin = new FileInputStream(path);
-            int i= 0;
-            String str = "";
-            while((i=fin.read())!=-1){
-                str+=(char)i;
+
+
+
+    public static List<String> getAllFunction(File path){
+         List<String> list = new LinkedList<>();
+        String s ="";
+        if (path.exists()){
+            try {
+                FileInputStream stream = new FileInputStream(path);
+                BufferedReader in = new BufferedReader(new InputStreamReader(stream));
+
+                while ((s = in.readLine()) != null){
+                    String[] dong = s.split("\\{");
+
+                    String d = dong[0];
+
+                    if (d.contains("static")){
+                        list.add(d);
+                    }
+                }
+                in.close();
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            while(str.indexOf("public static")!=-1){
-                int posStart = str.indexOf("public static");
-                int posEnd = str.indexOf("//end");
-                String temp = str.substring(posStart,posEnd);
-                str = str.substring(posEnd+1);
-                myList.add(temp);
-            }
-            return myList;
         }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
+        return list;
     }
-    public String findFunctionByName(String name){
-        Task1 task1 = new Task1();
-        List<String> myFuctions =  task1.getAllFunctions("src/week9/Utils.java");
-        String standarName = name.substring(0,name.indexOf("("));
-        for(int i=0;i<myFuctions.size();i++){
-            if(myFuctions.get(i).indexOf(standarName)!=-1){
-                return myFuctions.get(i);
+
+    public static String findFunctionByName(String name){
+        File file = new File("/Users/truongnguyen/Downloads/oop2018as/src/week9/Utils.java");
+        if (!file.exists()){
+            return "Khong tim thay file...";
+        }else {
+            try {
+                FileInputStream stream = new FileInputStream(file);
+                BufferedReader in = new BufferedReader(new InputStreamReader(stream));
+                String dong;
+
+                while ((dong = in.readLine()) != null){
+                    String[] s =  dong.split("\\{");
+                    String l = s[0];
+
+                    if (l.contains(name)){
+                        return l;
+                    }
+                }
+                in.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
-        return null;
+        return "Khong tim thay " + name;
     }
     public static void main(String Args[]){
-        Task1 task1 = new Task1();
-        System.out.println(task1.findFunctionByName("readContentFormFile(String)"));
+        List<String> list1  = getAllFunction(new File("src/week9/Utils.java"));
+        for (String l : list1){
+            System.out.println(l);
+        }
+        String name = "String readContentFromFile";
+        //System.out.println("\nTim kiem phuong thuc " + name);
+        System.out.println(findFunctionByName(name));
     }
 }

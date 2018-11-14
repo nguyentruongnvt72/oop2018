@@ -17,6 +17,7 @@ public class Utils {
             e.printStackTrace();
         }
         return read.toString();
+
     }
 
     public static void writeAddContentToFile(String path){
@@ -89,8 +90,8 @@ public class Utils {
         Utils a = new Utils();
         //findFileByName() fileAdd = new File("week9", "file");
         //a.writeContentToFile("/Users/truongnguyen/Downloads/oop2018s/src/week9/file.txt");
-        a.writeAddContentToFile("/Users/truongnguyen/Downloads/oop2018s/src/week9/file.txt");
-        System.out.println(a.readContentFromFile("/Users/truongnguyen/Downloads/oop2018s/src/week9/file.txt"));
-        a.findFileByName("/Users/truongnguyen/Downloads/oop2018s/src/week9", "file.txt");
+        //a.writeAddContentToFile("/Users/truongnguyen/Downloads/oop2018as/src/week9/file.txt");
+        a.readContentFromFile("/Users/truongnguyen/Downloads/oop2018as/src/week9/file.txt");
+        //a.findFileByName("/Users/truongnguyen/Downloads/oop2018as/src/week9", "file.txt");
     }
 }
