@@ -5,11 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Task1 {
-
-
-
-    public static List<String> getAllFunction(File path){
-         List<String> list = new LinkedList<>();
+    public static ArrayList<String> getAllFunction(File path){
+         ArrayList list = new ArrayList();
         String s ="";
         if (path.exists()){
             try {
@@ -17,12 +14,9 @@ public class Task1 {
                 BufferedReader in = new BufferedReader(new InputStreamReader(stream));
 
                 while ((s = in.readLine()) != null){
-                    String[] dong = s.split("\\{");
-
-                    String d = dong[0];
-
-                    if (d.contains("static")){
-                        list.add(d);
+                     String[] a = s.split("\\{");
+                    if (a[0].contains("static") ){
+                        list.add(a[0]);
                     }
                 }
                 in.close();
@@ -48,10 +42,10 @@ public class Task1 {
 
                 while ((dong = in.readLine()) != null){
                     String[] s =  dong.split("\\{");
-                    String l = s[0];
 
-                    if (l.contains(name)){
-                        return l;
+
+                    if (s[0].contains(name)){
+                        return s[0];
                     }
                 }
                 in.close();
@@ -62,6 +56,7 @@ public class Task1 {
             }
         }
         return "Khong tim thay " + name;
+
     }
     public static void main(String Args[]){
         List<String> list1  = getAllFunction(new File("src/week9/Utils.java"));
